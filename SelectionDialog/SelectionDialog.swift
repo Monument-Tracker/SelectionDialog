@@ -32,7 +32,7 @@ open class SelectionDialog: UIView {
         setObservers()
     }
     
-    public init(title: String, closeButtonTitle cancelString: String) {
+    @objc public init(title: String, closeButtonTitle cancelString: String) {
         self.title = title
         self.closeButtonTitle = cancelString
         super.init(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height))
@@ -44,7 +44,7 @@ open class SelectionDialog: UIView {
         setObservers()
     }
     
-    open func show() {
+    @objc open func show() {
         dialogView = createDialogView()
         guard let dialogView = dialogView else { return }
         
@@ -86,27 +86,27 @@ open class SelectionDialog: UIView {
         })
     }
     
-    open func addItem(item itemTitle: String) {
+    @objc open func addItem(item itemTitle: String) {
         let item = SelectionDialogItem(item: itemTitle)
         items.append(item)
     }
     
-    open func addItem(item itemTitle: String, icon: UIImage) {
+    @objc open func addItem(item itemTitle: String, icon: UIImage) {
         let item = SelectionDialogItem(item: itemTitle, icon: icon)
         items.append(item)
     }
     
-    open func addItem(item itemTitle: String, didTapHandler: @escaping (() -> Void)) {
+    @objc open func addItem(item itemTitle: String, didTapHandler: @escaping (() -> Void)) {
         let item = SelectionDialogItem(item: itemTitle, didTapHandler: didTapHandler)
         items.append(item)
     }
     
-    open func addItem(item itemTitle: String, icon: UIImage, didTapHandler: @escaping (() -> Void)) {
+    @objc open func addItem(item itemTitle: String, icon: UIImage, didTapHandler: @escaping (() -> Void)) {
         let item = SelectionDialogItem(item: itemTitle, icon: icon, didTapHandler: didTapHandler)
         items.append(item)
     }
     
-    open func addItem(_ item: SelectionDialogItem) {
+    @objc open func addItem(_ item: SelectionDialogItem) {
         items.append(item)
     }
     
