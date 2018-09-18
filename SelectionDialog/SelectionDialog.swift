@@ -196,7 +196,7 @@ open class SelectionDialog: UIView {
         let minValue = min(CGFloat(items.count)*50.0, minHeight)
         let button = UIButton(frame: CGRect(x: 0, y: titleHeight + minValue, width: 300, height: buttonHeight))
         
-        button.addTarget(self, action: #selector(SelectionDialog.close), for: UIControlEvents.touchUpInside)
+        button.addTarget(self, action: #selector(SelectionDialog.close), for: UIControl.Event.touchUpInside)
         
         let colorNormal = closeButtonColor != nil ? closeButtonColor : button.tintColor
         let colorHighlighted = closeButtonColorHighlighted != nil ? closeButtonColorHighlighted : colorNormal?.withAlphaComponent(0.5)
